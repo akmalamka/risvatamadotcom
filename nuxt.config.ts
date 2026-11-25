@@ -47,6 +47,18 @@ export default defineNuxtConfig({
     useCdn: process.env.NODE_ENV === 'production',
   },
 
+  vite: {
+    ssr: {
+      external: ['@sanity/client', 'get-it'],
+    },
+  },
+
+  nitro: {
+    externals: {
+      external: ['@sanity/client', 'get-it'],
+    },
+  },
+
   typescript: {
     strict: true,
   },
