@@ -1,10 +1,37 @@
 :root {
+  --page-bg: #02265a;
   --navbar-height: 80px;
+  --footer-gap-y: 3rem;
+  --footer-pad-block: 2.5rem;
+  --layout-margin: 64px;
+  --layout-padding: 16px;
+  --layout-main-min-height: 2000px;
 }
 
 @media (min-width: 768px) {
   :root {
     --navbar-height: 96px;
+    --footer-gap-y: 3rem;
+    --footer-pad-block: 4rem;
+  }
+}
+
+.layout-block {
+  margin-inline: var(--layout-margin);
+}
+
+/* Layout container (ftrprf / incentro pattern; padding lives here, not in components) */
+.container {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 100%;
+  padding-left: var(--layout-padding);
+  padding-right: var(--layout-padding);
+}
+
+@media (min-width: 1330px) {
+  .container {
+    max-width: 1330px;
   }
 }
 
@@ -16,7 +43,7 @@ body {
   min-height: 100dvh;
   margin: 0;
   overflow-x: hidden;
-  background: #ffffff;
-  color: #000000;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  background: var(--page-bg);
+  color: #ffffff;
+  font-family: Satoshi, ui-sans-serif, system-ui, sans-serif;
 }

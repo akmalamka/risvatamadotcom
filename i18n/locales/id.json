@@ -3,5 +3,31 @@
   "meta": {
     "title": "Risvatama Laras",
     "description": "Risvatama Laras"
+  },
+  "footer": {
+    "tagline1": "(ID) Powering industries with air you can trust.",
+    "tagline2": "(ID) Always reliable, always efficient.",
+    "address": "(ID) JL. Villa Nusa Indah 2  No. 33, Villa Nusa Indah II Office Centre Block U-3, Bojong Kulur, Kec. Gn. Putri, Kabupaten Bogor, Jawa Barat 16969",
+    "telLabel": "(ID) Tel:",
+    "phone1": "(+62) 8212441124",
+    "phone2": "(021) 21822439",
+    "email": "sales{'@'}risvatama.com",
+    "backToTop": "(ID) Back to top",
+    "copyrightPrefix": "(ID) © Risvatama Laras 2025, ",
+    "copyrightRights": "all rights reserved",
+    "credit": "design and development by akmal",
+    "certImageAlt": ""
+  },
+  "home": {
+    "hero": "Hero",
+    "imageMarquee": "Image marquee",
+    "about": "Tentang",
+    "products": "Produk",
+    "ctaBanner": "Banner ajakan",
+    "whoWeAre": "Siapa kami",
+    "trust": "Perusahaan yang mempercayai kami",
+    "solutions": "Solusi",
+    "differentiators": "Yang membedakan kami",
+    "testimonials": "Testimoni"
   }
 }

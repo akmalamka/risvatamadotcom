@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-100dvh bg-white font-sans text-black">
+  <div class="min-h-100dvh bg-primary-dark font-sans text-white">
     <SiteNavbar />
-    <main>
+    <main class="layout-block min-h-[var(--layout-main-min-height)] overflow-y-auto">
       <slot />
     </main>
     <SiteFooter />

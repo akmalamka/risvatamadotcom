@@ -8,5 +8,14 @@ useSeoMeta({
 </script>
 
 <template>
-  <SiteHero />
+  <HomeHero />
+  <HomeImageMarquee />
+  <HomeAbout />
+  <HomeProducts />
+  <HomeCtaBanner />
+  <HomeWhoWeAre />
+  <HomeTrust />
+  <HomeSolutions />
+  <HomeDifferentiators />
+  <HomeTestimonials />
 </template>

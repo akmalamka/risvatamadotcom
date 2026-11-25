@@ -1,14 +1,24 @@
 import { defineConfig, definePreset, presetUno } from 'unocss'
 
-const SANS = 'ui-sans-serif, system-ui, sans-serif'
+const SANS = 'Satoshi, ui-sans-serif, system-ui, sans-serif'
 const MONO = 'ui-monospace, SFMono-Regular, Menlo, monospace'
 
 const presetCore = definePreset({
   name: 'preset-core',
   theme: {
+    breakpoints: {
+      sm: '560px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1330px',
+    },
     container: {
       center: true,
-      padding: '1rem',
+      maxWidth: {
+        DEFAULT: '100%',
+        '2xl': '1330px',
+      },
     },
     fontFamily: {
       sans: SANS,
@@ -54,12 +64,19 @@ const presetCore = definePreset({
         dark: '#888A8B',
       },
       black: '#000000',
+      primary: {
+        DEFAULT: '#013682',
+        light: '#005BDE',
+        dark: '#02265A',
+      },
     },
   },
   shortcuts: {
     'wh-full': 'w-full h-full',
     'flex-center': 'flex justify-center items-center',
     'flex-vertical-center': 'flex flex-col justify-center items-center',
+    'flex-vertical': 'flex flex-col',
+    'flex-y-center': 'flex items-center',
   },
 })
 
