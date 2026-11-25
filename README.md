@@ -14,7 +14,7 @@ cp .env.example .env
 pnpm install
 ```
 
-Fill `.env` from `.env.example`. The homepage heading reads the `homePage` document title and falls back to "Risvatama Laras" until that document is published. Production env for the site lives in Vercel (`NUXT_SITE_URL`, `NUXT_SANITY_PROJECT_ID`, `NUXT_SANITY_DATASET`, `NUXT_SANITY_API_VERSION`). Studio env stays in gitignored `app/cms/.env`.
+Fill `.env` from `.env.example`. The homepage heading reads the `homePage` document title and falls back to "Risvatama Laras" until that document is published. Production env for the site lives in Vercel (`NUXT_SITE_URL`, `NUXT_SANITY_PROJECT_ID`, `NUXT_SANITY_DATASET`). Studio env stays in gitignored `app/cms/.env`.
 
 ## Scripts
 

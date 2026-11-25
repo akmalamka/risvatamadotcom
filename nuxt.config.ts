@@ -43,7 +43,7 @@ export default defineNuxtConfig({
   sanity: {
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
     dataset: process.env.NUXT_SANITY_DATASET || 'production',
-    apiVersion: process.env.NUXT_SANITY_API_VERSION || '2026-05-15',
+    apiVersion: '2024-03-15',
     useCdn: process.env.NODE_ENV === 'production',
   },
 
