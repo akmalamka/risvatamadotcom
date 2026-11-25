@@ -4,6 +4,19 @@ import { animate } from 'motion'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 
 const { t } = useI18n()
+const sanity = useSanity()
+const homePageQuery = defineQuery(`*[_id == "homePage"][0]{ title }`)
+const { data: homePage } = await useAsyncData('home-page', async () => {
+  try {
+    return await sanity.client.fetch<{ title?: string } | null>(homePageQuery)
+  }
+  catch (error) {
+    console.error('Homepage title could not be loaded from Sanity. Showing the fallback title.', error)
+    return null
+  }
+})
+const title = computed(() => homePage.value?.title || t('brand'))
+
 const elementRef = ref<HTMLElement | null>(null)
 const isOnView = ref(false)
 
@@ -53,7 +66,7 @@ onUnmounted(() => {
       ref="elementRef"
       class="m-0 text-center text-h1-sm text-black md:text-h4"
     >
-      {{ t('brand') }}
+      {{ title }}
     </h1>
   </section>
 </template>
