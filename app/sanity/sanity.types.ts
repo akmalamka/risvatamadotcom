@@ -28,7 +28,6 @@ export type LayoutFooter = {
   email?: string
   backToTop?: string
   copyright?: string
-  credit?: string
 }
 
 export type LayoutQueryResult = {

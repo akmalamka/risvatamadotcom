@@ -3,6 +3,7 @@ import { pickLocaleString } from '~/sanity/pick-locale-string'
 import type { LayoutFooter } from '~/sanity/sanity.types'
 
 const DEFAULT_MAP_URL = 'https://www.google.com/maps'
+const AKMAL_URL = 'https://www.thisisakmal.xyz/'
 
 const props = defineProps<{
   data?: {
@@ -37,10 +38,14 @@ const addressMapUrl = computed(
 const phone1 = computed(() => footer.value?.phone1 || t('footer.phone1'))
 const phone2 = computed(() => footer.value?.phone2 || t('footer.phone2'))
 const email = computed(() => footer.value?.email || t('footer.email'))
+const emailMailto = computed(() => `mailto:${email.value}`)
 const backToTop = computed(() => footer.value?.backToTop || t('footer.backToTop'))
 
 const copyrightText = computed(() => footer.value?.copyright)
-const creditText = computed(() => footer.value?.credit || t('footer.credit'))
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -91,7 +96,7 @@ const creditText = computed(() => footer.value?.credit || t('footer.credit'))
           :href="addressMapUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="m-0 text-body-large font-medium leading-[1.15] whitespace-pre-wrap no-underline transition-[text-decoration] duration-200 hover:underline"
+          class="footer-text-link m-0 text-body-large font-medium leading-[1.15] whitespace-pre-wrap"
         >
           {{ addressText }}
         </a>
@@ -104,12 +109,21 @@ const creditText = computed(() => footer.value?.credit || t('footer.credit'))
               <span>{{ phone2 }}</span>
             </div>
           </div>
-          <span class="lowercase">{{ email }}</span>
+          <a
+            :href="emailMailto"
+            class="footer-text-link lowercase"
+          >
+            {{ email }}
+          </a>
         </div>
 
-        <p class="m-0 text-body-large font-medium leading-[1.15] lg:text-right">
+        <button
+          type="button"
+          class="footer-text-link m-0 block w-full border-0 bg-transparent p-0 text-left text-body-large font-medium leading-[1.15] font-inherit lg:text-right"
+          @click="scrollToTop"
+        >
           {{ backToTop }}
-        </p>
+        </button>
       </div>
 
       <div class="flex-vertical gap-2.5 border-t border-white pt-2.5">
@@ -124,7 +138,15 @@ const creditText = computed(() => footer.value?.credit || t('footer.credit'))
             </template>
           </p>
           <p class="m-0 md:text-right">
-            {{ creditText }}
+            design and development by
+            <a
+              :href="AKMAL_URL"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-text-link"
+            >
+              Akmal
+            </a>
           </p>
         </div>
       </div>

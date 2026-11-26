@@ -76,10 +76,5 @@ export const layoutFooter = defineType({
       title: 'Copyright (left)',
       type: 'string',
     }),
-    defineField({
-      name: 'credit',
-      title: 'Credit (right)',
-      type: 'string',
-    }),
   ],
 })

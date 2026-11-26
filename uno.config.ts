@@ -78,6 +78,9 @@ const presetCore = definePreset({
     'flex-vertical-center': 'flex flex-col justify-center items-center',
     'flex-vertical': 'flex flex-col',
     'flex-y-center': 'flex items-center',
+    'offsetted-underline': 'underline underline-offset-3',
+    'footer-text-link':
+      'text-white visited:text-white hover:text-white no-underline cursor-pointer decoration-white decoration-1 transition-[text-decoration] duration-200 hover:offsetted-underline',
   },
 })
 
