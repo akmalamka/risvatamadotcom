@@ -10,6 +10,10 @@ const { data } = await useSanityLayoutFetcher()
     <main class="layout-block min-h-[var(--layout-main-min-height)] overflow-y-auto">
       <slot />
     </main>
-    <SiteFooter :footer="data?.footer ?? null" />
+    <SiteFooter
+      :data="{
+        footer: data?.footer ?? null,
+      }"
+    />
   </div>
 </template>

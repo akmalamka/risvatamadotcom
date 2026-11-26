@@ -5,38 +5,42 @@ import type { LayoutFooter } from '~/sanity/sanity.types'
 const DEFAULT_MAP_URL = 'https://www.google.com/maps'
 
 const props = defineProps<{
-  footer?: LayoutFooter | null
+  data?: {
+    footer: LayoutFooter | null
+  }
 }>()
+
+const footer = computed(() => props.data?.footer ?? null)
 
 const { t, locale } = useI18n()
 
 const tagline1 = computed(() =>
-  pickLocaleString(props.footer?.tagline1, locale.value, t('footer.tagline1')),
+  pickLocaleString(footer.value?.tagline1, locale.value, t('footer.tagline1')),
 )
 
 const tagline2 = computed(() =>
-  pickLocaleString(props.footer?.tagline2, locale.value, t('footer.tagline2')),
+  pickLocaleString(footer.value?.tagline2, locale.value, t('footer.tagline2')),
 )
 
 const footerImages = computed(() =>
-  (props.footer?.images ?? []).filter(image => image.url),
+  (footer.value?.images ?? []).filter(image => image.url),
 )
 
 const addressText = computed(
-  () => props.footer?.address?.text || t('footer.address'),
+  () => footer.value?.address?.text || t('footer.address'),
 )
 
 const addressMapUrl = computed(
-  () => props.footer?.address?.mapUrl || DEFAULT_MAP_URL,
+  () => footer.value?.address?.mapUrl || DEFAULT_MAP_URL,
 )
 
-const phone1 = computed(() => props.footer?.phone1 || t('footer.phone1'))
-const phone2 = computed(() => props.footer?.phone2 || t('footer.phone2'))
-const email = computed(() => props.footer?.email || t('footer.email'))
-const backToTop = computed(() => props.footer?.backToTop || t('footer.backToTop'))
+const phone1 = computed(() => footer.value?.phone1 || t('footer.phone1'))
+const phone2 = computed(() => footer.value?.phone2 || t('footer.phone2'))
+const email = computed(() => footer.value?.email || t('footer.email'))
+const backToTop = computed(() => footer.value?.backToTop || t('footer.backToTop'))
 
-const copyrightText = computed(() => props.footer?.copyright)
-const creditText = computed(() => props.footer?.credit || t('footer.credit'))
+const copyrightText = computed(() => footer.value?.copyright)
+const creditText = computed(() => footer.value?.credit || t('footer.credit'))
 </script>
 
 <template>

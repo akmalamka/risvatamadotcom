@@ -1,9 +1,10 @@
 import { groq } from '#imports'
 
+import { FOOTER_ID } from './sanity.constant'
 import type { LayoutQueryResult } from './sanity.types'
 
 const layoutQuery = groq`{
-  'footer': *[_type == 'layoutFooter'][0]{
+  'footer': *[_id == $footerId][0]{
     ...,
     address,
     images[]{
@@ -17,5 +18,7 @@ const layoutQuery = groq`{
 }`
 
 export function useSanityLayoutFetcher() {
-  return useSanityQuery<LayoutQueryResult>(layoutQuery)
+  return useSanityQuery<LayoutQueryResult>(layoutQuery, {
+    footerId: FOOTER_ID,
+  })
 }
