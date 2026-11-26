@@ -12,6 +12,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "dev:studio": "pnpm --filter cms dev",
+    "deploy:studio": "pnpm --filter cms deploy",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {

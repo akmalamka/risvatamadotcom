@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "sanity dev --port 3333",
     "start": "sanity start",
-    "build": "sanity build"
+    "build": "sanity build",
+    "deploy": "sanity deploy"
   },
   "dependencies": {
     "@sanity/vision": "6.25.0",
