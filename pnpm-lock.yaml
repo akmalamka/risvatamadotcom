@@ -213,6 +213,9 @@ importers:
         specifier: 3.5.46
         version: 3.5.46(typescript@6.0.3)
     devDependencies:
+      '@unocss/preset-wind3':
+        specifier: 66.13.0
+        version: 66.13.0
       typescript:
         specifier: 6.0.3
         version: 6.0.3

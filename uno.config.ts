@@ -1,4 +1,5 @@
-import { defineConfig, definePreset, presetUno } from 'unocss'
+import { presetWind3 } from '@unocss/preset-wind3'
+import { defineConfig, definePreset } from 'unocss'
 
 const SANS = 'Satoshi, ui-sans-serif, system-ui, sans-serif'
 const MONO = 'ui-monospace, SFMono-Regular, Menlo, monospace'
@@ -82,7 +83,7 @@ const presetCore = definePreset({
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetWind3(),
     presetCore,
   ],
 })
