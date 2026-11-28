@@ -33,3 +33,23 @@ export type LayoutFooter = {
 export type LayoutQueryResult = {
   footer: LayoutFooter | null
 }
+
+export type HeroTitleBlock = {
+  _key: string
+  _type: 'heroTitle'
+  title?: LocaleString
+  subtitle?: LocaleString
+}
+
+export type PageComponent = HeroTitleBlock
+
+export type PageQueryResult = {
+  title?: string
+  description?: string
+  ogImage?: {
+    asset?: {
+      _ref?: string
+    }
+  }
+  components?: PageComponent[] | null
+}

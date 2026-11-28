@@ -1,6 +1,17 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-11-25',
 
+  components: {
+    dirs: [
+      '~/components',
+      '~/block/components',
+    ],
+  },
+
+  routeRules: {
+    '/': { redirect: '/en' },
+  },
+
   css: ['~/designs/styles/index.css'],
 
   modules: [

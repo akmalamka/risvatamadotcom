@@ -4,6 +4,11 @@
     "title": "Risvatama Laras",
     "description": "Risvatama Laras"
   },
+  "error": {
+    "code404": "404",
+    "notFound": "This page does not exist.",
+    "generic": "Something went wrong. Please try again later."
+  },
   "footer": {
     "tagline1": "Powering industries with air you can trust.",
     "tagline2": "Always reliable, always efficient.",

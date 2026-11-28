@@ -3,7 +3,7 @@ import type { StructureResolver } from 'sanity/structure'
 import { FOOTER_ID, FOOTER_SCHEMA } from './sanity.constant'
 
 export const structure: StructureResolver = (S) => {
-  const singletonSchemas = new Set(['homePage', FOOTER_SCHEMA])
+  const singletonSchemas = new Set([FOOTER_SCHEMA])
 
   const defaultItems = S.documentTypeListItems().filter(
     listItem => !singletonSchemas.has(listItem.getId() ?? ''),
@@ -12,15 +12,6 @@ export const structure: StructureResolver = (S) => {
   return S.list()
     .title('Content')
     .items([
-      S.listItem()
-        .title('Homepage')
-        .id('homePage')
-        .child(
-          S.document()
-            .schemaType('homePage')
-            .documentId('homePage')
-            .title('Homepage'),
-        ),
       S.listItem()
         .title('Footer')
         .id('layoutFooter')

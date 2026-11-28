@@ -14,7 +14,13 @@ cp .env.example .env
 pnpm install
 ```
 
-Fill `.env` from `.env.example`. The homepage heading reads the `homePage` document title and falls back to "Risvatama Laras" until that document is published. Production env for the site lives in Vercel (`NUXT_SITE_URL`, `NUXT_SANITY_PROJECT_ID`, `NUXT_SANITY_DATASET`). Studio env stays in gitignored `app/cms/.env`.
+Fill `.env` from `.env.example`. Production env for the site lives in Vercel (`NUXT_SITE_URL`, `NUXT_SANITY_PROJECT_ID`, `NUXT_SANITY_DATASET`). Studio env stays in gitignored `app/cms/.env`.
+
+### CMS pages
+
+Site routes are built from Sanity **`pages`** documents. Each page has a **URL** slug that starts with `/` (no locale prefix in the CMS). Examples: `/` for the homepage (`/en`, `/id` on the site), `/about` for `/en/about`.
+
+In Studio, create a page with URL `/`, add a **Hero Title** block with English/Indonesian title and subtitle, then publish. Until that document exists, the homepage returns 404.
 
 ## Scripts
 

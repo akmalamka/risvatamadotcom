@@ -4,6 +4,11 @@
     "title": "Risvatama Laras",
     "description": "Risvatama Laras"
   },
+  "error": {
+    "code404": "404",
+    "notFound": "Halaman ini tidak ada.",
+    "generic": "Terjadi kesalahan. Silakan coba lagi nanti."
+  },
   "footer": {
     "tagline1": "(ID) Powering industries with air you can trust.",
     "tagline2": "(ID) Always reliable, always efficient.",

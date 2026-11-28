@@ -1,21 +1,15 @@
 <script setup lang="ts">
-const { t } = useI18n()
+import { assertCmsPageFound, useCmsPageMeta } from '~/composables/use-cms-page'
+import { useSanityPage } from '~/sanity/sanity.fetcher'
 
-useSeoMeta({
-  title: () => t('meta.title'),
-  description: () => t('meta.description'),
-})
+definePageMeta({ layout: 'default' })
+
+const { data } = await useSanityPage()
+
+useCmsPageMeta(data)
+assertCmsPageFound(data)
 </script>
 
 <template>
-  <HomeHero />
-  <HomeImageMarquee />
-  <HomeAbout />
-  <HomeProducts />
-  <HomeCtaBanner />
-  <HomeWhoWeAre />
-  <HomeTrust />
-  <HomeSolutions />
-  <HomeDifferentiators />
-  <HomeTestimonials />
+  <CmsPageContent v-if="data" :page="data" />
 </template>

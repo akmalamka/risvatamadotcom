@@ -1,5 +1,10 @@
+<script setup lang="ts">
+const error = useError()
+</script>
+
 <template>
-  <NuxtLayout>
+  <NuxtLayout v-if="!error">
     <NuxtPage />
   </NuxtLayout>
+  <NuxtPage v-else />
 </template>
